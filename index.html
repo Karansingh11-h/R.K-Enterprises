@@ -175,7 +175,7 @@ footer strong{color:rgba(255,255,255,.8)}
 <div class="hdr">
   <div class="hdr-top">
     <div class="logo">
-      <div class="logo-name">🏪 R.K. Enterprise</div>
+      <div class="logo-name" id="logoclick" onclick="secretTap()">🏪 R.K. Enterprise</div>
       <div class="logo-sub">Grocery & Electronics</div>
     </div>
     <div class="searchbox">
@@ -183,7 +183,7 @@ footer strong{color:rgba(255,255,255,.8)}
       <button onclick="doSearch(document.getElementById('si').value)">🔍</button>
     </div>
     <div class="hdr-btns">
-      <button class="hbtn admin" onclick="openAdmin()">⚙️</button>
+      
       <button class="hbtn cart" onclick="openCart()">🛒 <span id="cc">0</span><div class="cbadge" id="cbdg" style="display:none">0</div></button>
     </div>
   </div>
@@ -443,7 +443,7 @@ function placeOrder(){
   window.open('https://wa.me/919693912251?text='+msg,'_blank');
 }
 
-function openAdmin(){document.getElementById('aover').classList.add('on');renderAdmin();buildEmojis();clrForm()}
+function openAdmin(){var pwd=prompt('🔒 Admin Password daalo:');if(pwd===null)return;if(pwd!=='RK@1234'){alert('❌ Galat password!');return;}document.getElementById('aover').classList.add('on');renderAdmin();buildEmojis();clrForm()}
 function closeAdmin(){document.getElementById('aover').classList.remove('on')}
 function adminOverlayClick(e){if(e.target===document.getElementById('aover'))closeAdmin()}
 
@@ -521,7 +521,7 @@ function clrForm(){
   sele='📦';buildEmojis();
 }
 
-var tid;
+var tid,tapCount=0,tapTimer;function secretTap(){tapCount++;clearTimeout(tapTimer);if(tapCount>=5){tapCount=0;var pwd=prompt('🔒 Admin Password:');if(pwd==='RK@1234'){document.getElementById('aover').classList.add('on');renderAdmin();buildEmojis();clrForm();}else{alert('❌ Galat password!');}}else{tapTimer=setTimeout(function(){tapCount=0;},1500);}}
 function showToast(m){
   var t=document.getElementById('toast');
   t.textContent=m;t.classList.add('on');
