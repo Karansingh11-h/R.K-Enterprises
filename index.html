@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>R.K. Enterprise</title>
+<title>R.K. Enterprises</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -175,7 +175,7 @@ footer strong{color:rgba(255,255,255,.8)}
 <div class="hdr">
   <div class="hdr-top">
     <div class="logo">
-      <div class="logo-name" id="logoclick" onclick="secretTap()">🏪 R.K. Enterprise</div>
+      <div class="logo-name" id="logoclick" onclick="secretTap()">🏪 R.K. Enterprises</div>
       <div class="logo-sub">Grocery & Electronics</div>
     </div>
     <div class="searchbox">
@@ -274,7 +274,7 @@ footer strong{color:rgba(255,255,255,.8)}
 </div>
 
 <footer>
-  <strong>R.K. Enterprise</strong> — Aapka Bharosa, Hamari Zimmedaari 🏪<br>
+  <strong>R.K. Enterprises</strong> — Aapka Bharosa, Hamari Zimmedaari 🏪<br>
   <span style="margin-top:4px;display:block">© 2026 All Rights Reserved</span>
 </footer>
 
@@ -439,7 +439,7 @@ function closeCart(){document.getElementById('cdrawer').classList.remove('on');d
 function placeOrder(){
   var items=cart.map(function(c){return c.icon+' '+c.name+' x'+c.qty+' = ₹'+(c.price*c.qty)}).join('\n');
   var tot=cart.reduce(function(s,c){return s+c.price*c.qty},0);
-  var msg=encodeURIComponent('Namaskar R.K. Enterprise! 🛒\n\nMera Order:\n'+items+'\n\nTotal: ₹'+tot+'\n\nPlease confirm karein. 🙏');
+  var msg=encodeURIComponent('Namaskar R.K. Enterprises! 🛒\n\nMera Order:\n'+items+'\n\nTotal: ₹'+tot+'\n\nPlease confirm karein. 🙏');
   window.open('https://wa.me/919693912251?text='+msg,'_blank');
 }
 
